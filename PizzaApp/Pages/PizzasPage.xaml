@@ -1,0 +1,64 @@
+<ContentPage
+    x:Class="PizzaApp.PizzasPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Pizza List"
+    Shell.BackgroundColor="#0A1E2E"
+    Shell.TitleColor="#fff">
+
+    <ScrollView Padding="5">
+        <CollectionView
+            x:Name="PizzaList"
+            ItemsSource="{Binding PizaItems}"
+            SelectionChanged="OnPizzaSelected"
+            SelectionMode="Single">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView BackgroundColor="#fff">
+                        <Border
+                            Margin="10,5"
+                            Padding="6"
+                            Background="#0A1E2E">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="10" />
+                            </Border.StrokeShape>
+                            <StackLayout>
+                                <Frame
+                                    Padding="0"
+                                    BackgroundColor="#fff"
+                                    CornerRadius="10"
+                                    HasShadow="False"
+                                    HeightRequest="200">
+                                    <Image Aspect="AspectFit" Source="{Binding Image}" >
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnImageTapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Frame>
+                                <StackLayout Margin="10,5">
+                                    <Label
+                                        Margin="0,0,0,5"
+                                        FontSize="20"
+                                        Text="{Binding Name}"
+                                        TextColor="#F4AC20" />
+                                    <Label
+                                        FontSize="18"
+                                        Text="{Binding Description}"
+                                        TextColor="#fff" />
+                                    <Label
+                                        FontSize="14"
+                                        Text="{Binding Price, StringFormat='Price: {0:C}'}"
+                                        TextColor="#fff" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Border>
+                    </ContentView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ScrollView>
+
+</ContentPage>

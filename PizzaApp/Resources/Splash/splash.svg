@@ -1,0 +1,8 @@
+<svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#0A1E2E"/>
+
+  <!-- Pizzario Text -->
+  <text x="35%" y="55%" text-anchor="middle" fill="#F4AC20" font-size="30" font-family="Arial, sans-serif">Pizza</text>
+  <text x="72%" y="55%" text-anchor="middle" fill="#FFF" font-size="30" font-family="Arial, sans-serif">rio.</text>
+</svg>
